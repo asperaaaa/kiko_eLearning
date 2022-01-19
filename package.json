@@ -1,0 +1,27 @@
+{
+  "name": "kiko_eLearning",
+  "version": "1.0.0",
+  "repository": "git@github.com:asperaaaa/kiko_eLearning.git",
+  "author": "Cappuccio, Paolo <paolo.cappuccio@accenture.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config ./config/webpack.config.js",
+    "dev": "webpack serve --config ./config/webpack.config.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.16.10",
+    "@babel/preset-env": "^7.16.10",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "node-sass": "^7.0.1",
+    "pug": "^3.0.2",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.3"
+  }
+}
