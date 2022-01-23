@@ -5,8 +5,8 @@
   "author": "Cappuccio, Paolo <paolo.cappuccio@accenture.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config ./config/webpack.config.js",
-    "dev": "webpack serve --config ./config/webpack.config.js"
+    "build": "webpack",
+    "dev": "webpack serve"
   },
   "dependencies": {},
   "devDependencies": {
@@ -14,7 +14,9 @@
     "@babel/preset-env": "^7.16.10",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
+    "html-inline-css-webpack-plugin": "^1.11.1",
     "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.5.2",
     "node-sass": "^7.0.1",
     "pug": "^3.0.2",
     "pug-loader": "^2.4.0",

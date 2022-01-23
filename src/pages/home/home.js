@@ -1,4 +1,4 @@
-import style from './home.scss';
-import testComponent from '../../component/test';
+import "./home.scss";
+import logo from '../../assets/images/logo.svg';
 
-document.body.append(testComponent());
+console.log('Hello World');
