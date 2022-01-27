@@ -3,11 +3,13 @@ html
     head
         meta(charset="utf-8")    
     body
-        h1 HOME
-        img(src='./logo.svg')
+        h1 Big Title
+        h2 Small Title
+        img(src='./1.svg', inline)
         ul
             li Item A
             li Item B
-            li Item C       
-        each jsFile in htmlWebpackPlugin.files.js
-            script !{compilation.assets[jsFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()}       
+            li Item C
+
+    each jsFile in htmlWebpackPlugin.files.js
+        script !{compilation.assets[jsFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()}       
