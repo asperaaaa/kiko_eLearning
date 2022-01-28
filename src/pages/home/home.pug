@@ -1,15 +1,22 @@
-doctype html
-html
-    head
-        meta(charset="utf-8")    
-    body
-        h1 Big Title
-        h2 Small Title
-        img(src='./1.svg', inline)
-        ul
-            li Item A
-            li Item B
-            li Item C
+- const areas = [{"areaId":"1","areaTitle":"ALL","courses":[{"courseId":"1","courseTitle":"BE A KIKO BRAND AMBASSADOR","lessons":[{"lessonId":"1","program":"ENGAGEMENT","type":"Event","lessonTitle":"KIKO - Training","status":"todo"},{"lessonId":"2","program":"EMPOWERMENT","type":"Online Class","lessonTitle":"Il make-up e l'armonia dei colori","status":"blocked"},{"lessonId":"3","program":"EXCELLENCE","type":"Online Class","lessonTitle":"Boost!","status":"progress"},{"lessonId":"4","program":"EXCELLENCE","type":"Online Class","lessonTitle":"ANALYSE","status":"todo"},{"lessonId":"5","program":"EXCELLENCE","type":"Online Class","lessonTitle":"Boost! - 2","propaedeutic":"4","status":"todo"}]}]}]
+main.custom-learning-page
+    each area in areas
+        section.learning-path(id=area.areaId)
+            header
+                h2.learning-path__title=area.areaTitle
+            each course in area.courses
+                section.course(id=course.courseId)
+                    header
+                        h3.course__title=course.courseTitle
+                    .course__list
+                        each lesson in course.lessons
+                            article.lesson(id=lesson.lessonId data-status=lesson.status data-propaedeutic=lesson.propaedeutic)
+                                img(src=`./${lesson.program}.svg`, inline, class=`lesson__program`)
+                                .lesson__details
+                                    p.lesson__type=lesson.type
+                                    h4.lesson__title=lesson.lessonTitle
+                                    .lesson__fader
+                                p.lesson__status=lesson.status
 
-    each jsFile in htmlWebpackPlugin.files.js
-        script !{compilation.assets[jsFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()}       
+each jsFile in htmlWebpackPlugin.files.js
+    script !{compilation.assets[jsFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()}       

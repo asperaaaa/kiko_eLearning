@@ -1,18 +1,99 @@
-html {
-  font-size: 20px;
-  font-weight: 300;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.5;
-}
+$black: #323a45;
+$gray: #f4f4f4;
+$gray-dark: #6a7587;
+$white: #fff;
+
+$bg-main: $gray;
+$bg-card: $white;
+$text: $black;
+$text-light: $gray-dark;
+
+$border-radius: 0.25rem;
+$border-width: 0.125rem;
+$spacer-05: 0.5rem;
+$spacer-075: 0.75rem;
+$spacer-1: 1rem;
+$spacer-25: 2.5rem;
+
+// region TO REMOVE
 body {
-  min-height: 100vh;
-  background-color: #333;
-  color: #eee;
+  background-color: $bg-main;
+  font-family: Arial, sans-serif;
 }
-header h1 {
-  color: orange;
+// endregion TO REMOVE
+
+.custom-learning-page {
+  background-color: $bg-main;
+  font-size: 16px;
+  padding: $spacer-25;
 }
-header h2 {
-  color: orangered;
+.learning-path {
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: $spacer-1;
+  }
+}
+.course {
+  &__list {
+    display: flex;
+    overflow: auto;
+  }
+  &__title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: $spacer-05;
+  }
+}
+.lesson {
+  background-color: $bg-card;
+  border: $border-width solid #e4e7ec;
+  border-radius: $border-radius;
+  flex: 1 1 0;
+  min-width: 190px;
+  min-height: 275px;
+  position: relative;
+  width: 190px;
+  overflow: hidden;
+
+  &:not(:first-child) {
+    margin-left: $spacer-075;
+  }
+  &__program {
+    width: 100%;
+  }
+  &__details {
+    position: relative;
+    padding: $spacer-075;
+  }
+  &__type {
+    color: $text-light;
+    font-size: 0.75rem;
+    margin-top: 0;
+    margin-bottom: $spacer-075;
+  }
+  &__title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  &__status {
+    bottom: $spacer-075;
+    left: $spacer-075;
+    position: absolute;
+    margin: 0;
+  }
+  &__fader {
+    background: linear-gradient(90deg, hsla(0, 0%, 100%, 0) 0, #fff 70%);
+    position: absolute;
+    right: 0;
+    top: 0%;
+    height: 100%;
+    width: 90px;
+  }  
+  &[blocked] {
+    cursor: auto;
+    pointer-events: none;
+    opacity: 0.5;
+  }
 }
